@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Weather Explorer</string>
+    <string name="city_text">City</string>
+    <string name="degree_text">Degree</string>
+    <string name="update_text">update</string>
+    <string name="monday_text">Mon</string>
+    <string name="allow_location_permission_text">Firstly You need to allow location permissions if you want to get weather data automatically.</string>
+    <string name="enable_location_text">Secondly You need to enable location if you want to get weather data automatically.</string>
+    <string name="something_went_wrong_text">Something went wrong</string>
+    <string name="no_location_data_text">Can not get your current location.</string>
+    <string name="error_text">Error</string>
+    <string name="pressure_text">Pressure</string>
+    <string name="humidity_text">Humidity</string>
+    <string name="wind_text">Wind</string>
+    <string name="empty_text"> </string>
+    <string name="location_text">Location</string>
+    <string name="main_degree_value_text">%1$s, %2$s °C</string>
+    <string name="item_degree_value_text">%1$s °C</string>
+    <string name="pressure_value_text">%1$s hPa</string>
+    <string name="wind_speed_value_text">%1$s m/s</string>
+    <string name="turn_on_internet_connection_text">Internet connection fail. Please turn on Internet connection</string>
+</resources>

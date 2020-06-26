@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/degree_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/weather_image_view"
+        android:layout_width="@dimen/weather_image_size"
+        android:layout_height="@dimen/weather_image_size"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/dismiss_image_padding"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:src="@drawable/ic_error" />
+
+    <TextView
+        android:id="@+id/degree_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/degree_text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weather_image_view"
+        tools:text="@string/degree_text" />
+
+    <ImageView
+        android:id="@+id/pressure_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:paddingTop="@dimen/day_item_weather_image_size"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_pressure"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/humidity_image_view"
+        app:layout_constraintTop_toBottomOf="@id/degree_text" />
+
+    <ImageView
+        android:id="@+id/humidity_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:paddingTop="@dimen/day_item_weather_image_size"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_humidity"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@+id/pressure_image_view"
+        app:layout_constraintRight_toLeftOf="@+id/wind_image_view"
+        app:layout_constraintTop_toBottomOf="@id/degree_text" />
+
+    <ImageView
+        android:id="@+id/wind_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:paddingTop="@dimen/day_item_weather_image_size"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_wind"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@+id/humidity_image_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/degree_text" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="pressure_image_view,humidity_image_view,wind_image_view" />
+
+    <TextView
+        android:id="@+id/pressure_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:padding="@dimen/wind_value_text_padding"
+        android:text="@string/pressure_text"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/error_text_size"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/pressure_image_view"
+        app:layout_constraintRight_toRightOf="@+id/pressure_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+    <TextView
+        android:id="@+id/humidity_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:padding="@dimen/wind_value_text_padding"
+        android:text="@string/humidity_text"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/error_text_size"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/humidity_image_view"
+        app:layout_constraintRight_toRightOf="@+id/humidity_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+    <TextView
+        android:id="@+id/wind_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:padding="@dimen/wind_value_text_padding"
+        android:text="@string/wind_text"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/error_text_size"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/wind_image_view"
+        app:layout_constraintRight_toRightOf="@+id/wind_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+    <TextView
+        android:id="@+id/pressure_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:text="@string/pressure_text"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/pressure_title_text_size"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/pressure_value_text"
+        app:layout_constraintRight_toRightOf="@+id/pressure_value_text"
+        app:layout_constraintTop_toBottomOf="@+id/pressure_value_text" />
+
+    <TextView
+        android:id="@+id/humidity_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:text="@string/humidity_text"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/pressure_title_text_size"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/humidity_value_text"
+        app:layout_constraintRight_toRightOf="@+id/humidity_value_text"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_value_text" />
+
+    <TextView
+        android:id="@+id/wind_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/falling_sky_medium_ved9"
+        android:text="@string/wind_text"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/pressure_title_text_size"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/wind_value_text"
+        app:layout_constraintRight_toRightOf="@+id/wind_value_text"
+        app:layout_constraintTop_toBottomOf="@+id/wind_value_text" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/days_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/dismiss_image_padding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_title_text" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/update_button_height"
+        android:layout_marginLeft="@dimen/error_description_padding"
+        android:layout_marginRight="@dimen/error_description_padding"
+        android:layout_marginBottom="@dimen/dismiss_image_padding"
+        android:background="@drawable/update_button_background"
+        android:fontFamily="@font/falling_sky_bold_zeml"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="@string/update_text"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/ok_button_size"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

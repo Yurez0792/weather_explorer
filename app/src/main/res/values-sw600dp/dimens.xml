@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_icon_padding">100dp</dimen>
+    <dimen name="dismiss_image_padding">20dp</dimen>
+    <dimen name="error_background_corner_radius">24dp</dimen>
+    <dimen name="error_text_size">25sp</dimen>
+    <dimen name="degree_text_size">50sp</dimen>
+    <dimen name="ok_button_size">20sp</dimen>
+    <dimen name="pressure_title_text_size">40sp</dimen>
+    <dimen name="day_weather_item_layout_margin">15dp</dimen>
+    <dimen name="pressure_value_text_size">55sp</dimen>
+    <dimen name="day_text_size">30sp</dimen>
+    <dimen name="error_text_padding">10dp</dimen>
+    <dimen name="wind_value_text_padding">5dp</dimen>
+    <dimen name="button_style_radius">80dp</dimen>
+    <dimen name="error_description_padding">25dp</dimen>
+    <dimen name="weather_image_size">280dp</dimen>
+    <dimen name="day_item_size">250dp</dimen>
+    <dimen name="day_item_weather_image_size">100dp</dimen>
+    <dimen name="update_button_height">55dp</dimen>
+</resources>
