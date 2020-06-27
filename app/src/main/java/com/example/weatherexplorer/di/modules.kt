@@ -5,7 +5,7 @@ import com.example.weatherexplorer.repository.location.LocationRepository
 import com.example.weatherexplorer.repository.location.LocationRepositoryImpl
 import com.example.weatherexplorer.repository.weather.WeatherRepository
 import com.example.weatherexplorer.repository.weather.WeatherRepositoryImpl
-import com.example.weatherexplorer.view.home.MainViewModel
+import com.example.weatherexplorer.view.home.HomeViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -17,5 +17,5 @@ val module = module {
 }
 
 val viewModelModule = module {
-    viewModel { MainViewModel(get(), get(), androidContext().resources) }
+    viewModel { HomeViewModel(get(), get(), androidContext().resources) }
 }

@@ -20,10 +20,10 @@ import com.example.weatherexplorer.R
 import com.example.weatherexplorer.model.City
 import com.example.weatherexplorer.model.DayItem
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.main_fragment_layout.*
+import kotlinx.android.synthetic.main.home_fragment_layout.*
 import org.koin.android.ext.android.inject
 
-class MainFragment : Fragment(), DaysAdapterListener {
+class HomeFragment : Fragment(), DaysAdapterListener {
 
     companion object {
         private const val LOCATION_PERMISSION = "Location permission"
@@ -32,7 +32,7 @@ class MainFragment : Fragment(), DaysAdapterListener {
         const val IMAGE_URL_IMAGE_TYPE = ".png"
     }
 
-    private val mViewModel by inject<MainViewModel>()
+    private val mViewModel by inject<HomeViewModel>()
     private var mCity: City? = null
 
     override fun onCreateView(
@@ -40,7 +40,7 @@ class MainFragment : Fragment(), DaysAdapterListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.main_fragment_layout, container, false)
+        return inflater.inflate(R.layout.home_fragment_layout, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -87,7 +87,7 @@ class DaysRecyclerAdapter(
 
     private fun setWeatherImage(weatherImageView: ImageView, dayItem: DayItem) {
         Picasso.Builder(mContext!!).build()
-            .load(MainFragment.IMAGE_BASE_URL + dayItem.weather?.get(0)?.icon + MainFragment.IMAGE_URL_IMAGE_TYPE)
+            .load(HomeFragment.IMAGE_BASE_URL + dayItem.weather?.get(0)?.icon + HomeFragment.IMAGE_URL_IMAGE_TYPE)
             .placeholder(R.drawable.ic_launcher_foreground)
             .error(R.drawable.ic_error)
             .into(weatherImageView)

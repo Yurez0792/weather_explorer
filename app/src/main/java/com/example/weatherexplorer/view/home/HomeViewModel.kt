@@ -18,7 +18,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
-class MainViewModel(
+class HomeViewModel(
     private val locationRepository: LocationRepository,
     private val weatherRepository: WeatherRepository,
     private val resources: Resources
